@@ -44,5 +44,11 @@
     <ClInclude Include="taulell.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="libraries.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="defines.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

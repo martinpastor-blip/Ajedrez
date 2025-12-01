@@ -134,6 +134,8 @@
     <ClCompile Include="taulell.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="defines.h" />
+    <ClInclude Include="libraries.h" />
     <ClInclude Include="logica_joc.h" />
     <ClInclude Include="moviments.h" />
     <ClInclude Include="normes.h" />
