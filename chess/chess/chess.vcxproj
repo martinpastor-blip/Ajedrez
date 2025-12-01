@@ -138,7 +138,7 @@
     <ClInclude Include="libraries.h" />
     <ClInclude Include="logica_joc.h" />
     <ClInclude Include="moviments.h" />
-    <ClInclude Include="normes.h" />
+    <ClInclude Include="regles.h" />
     <ClInclude Include="taulell.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

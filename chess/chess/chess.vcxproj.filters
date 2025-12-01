@@ -35,7 +35,7 @@
     <ClInclude Include="moviments.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="normes.h">
+    <ClInclude Include="regles.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="logica_joc.h">
