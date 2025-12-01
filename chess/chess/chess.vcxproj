@@ -127,7 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="logica_joc.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="moviments.cpp" />
+    <ClCompile Include="regles.cpp" />
+    <ClCompile Include="taulell.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="logica_joc.h" />
+    <ClInclude Include="moviments.h" />
+    <ClInclude Include="normes.h" />
+    <ClInclude Include="taulell.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
