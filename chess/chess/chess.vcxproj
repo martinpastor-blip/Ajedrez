@@ -127,6 +127,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="FileName.cpp" />
     <ClCompile Include="logica_joc.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="moviments.cpp" />
