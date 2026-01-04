@@ -1,10 +1,9 @@
 ﻿#include "libraries.h"
 #include "defines.h"
+#include "taulell.h"
 
-
-//int main() {
-//
-//	//void generarTaulell(char taulell[TAMANYTAULELL][TAMANYTAULELL]);
-//
-//
-//}
+int main() {
+    inicialitzarTaulell();
+    imprimirTaulell();
+    return 0;
+}
