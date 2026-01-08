@@ -6,4 +6,5 @@ int main() {
     inicialitzarTaulell();
     imprimirTaulell();
     return 0;
+
 }

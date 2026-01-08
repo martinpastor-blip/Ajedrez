@@ -2,21 +2,19 @@
 #include "defines.h"
 #include "taulell.h"
 
-#include "taulell.h"
-#include <iostream>
-
 /* DEFINICIÓ DEL TAULELL */
 Fitxa taulell[TAMANYTAULELL][TAMANYTAULELL];
 
 void imprimirTaulell() {
-    std::cout << "\n   a  b  c  d  e  f  g  h\n";
+
+    std::cout<<NUMEROSTABLERO;
+
     for (int f = 0; f < TAMANYTAULELL; f++) {
-        std::cout << TAMANYTAULELL - f << " ";
+        std::cout << " " << TAMANYTAULELL - f ;
         for (int c = 0; c < TAMANYTAULELL; c++)
             std::cout << taulell[f][c].simbol;
-        std::cout << " " << TAMANYTAULELL - f << "\n";
+       std::cout<< "\n";
     }
-    std::cout << "   a  b  c  d  e  f  g  h\n";
 }
 
 
@@ -24,22 +22,24 @@ void posarFitxa(int f, int c, ColorFitxa color, TipusFitxa tipus) {
     taulell[f][c].color = color;
     taulell[f][c].tipus = tipus;
 
+
+    // (fitxes en anglès, però amb el "nom" en català per entrendre-ho millor)
     if (tipus == TipusFitxa::BUIT) taulell[f][c].simbol = " . ";
     else if (color == ColorFitxa::BLANC) {
         if (tipus == TipusFitxa::PEO) taulell[f][c].simbol = " P ";
         else if (tipus == TipusFitxa::TORRE) taulell[f][c].simbol = " T ";
-        else if (tipus == TipusFitxa::CAVALL) taulell[f][c].simbol = " C ";
-        else if (tipus == TipusFitxa::ALFIL) taulell[f][c].simbol = " A ";
+        else if (tipus == TipusFitxa::CAVALL) taulell[f][c].simbol = " H ";
+        else if (tipus == TipusFitxa::ALFIL) taulell[f][c].simbol = " B ";
         else if (tipus == TipusFitxa::REINA) taulell[f][c].simbol = " Q ";
-        else if (tipus == TipusFitxa::REI) taulell[f][c].simbol = " R ";
+        else if (tipus == TipusFitxa::REI) taulell[f][c].simbol = " K ";
     }
     else {
         if (tipus == TipusFitxa::PEO) taulell[f][c].simbol = " p ";
         else if (tipus == TipusFitxa::TORRE) taulell[f][c].simbol = " t ";
-        else if (tipus == TipusFitxa::CAVALL) taulell[f][c].simbol = " c ";
-        else if (tipus == TipusFitxa::ALFIL) taulell[f][c].simbol = " a ";
+        else if (tipus == TipusFitxa::CAVALL) taulell[f][c].simbol = " h ";
+        else if (tipus == TipusFitxa::ALFIL) taulell[f][c].simbol = " b ";
         else if (tipus == TipusFitxa::REINA) taulell[f][c].simbol = " q ";
-        else if (tipus == TipusFitxa::REI) taulell[f][c].simbol = " r ";
+        else if (tipus == TipusFitxa::REI) taulell[f][c].simbol = " k ";
     }
 }
 
@@ -53,6 +53,8 @@ void inicialitzarTaulell() {
         posarFitxa(6, c, ColorFitxa::BLANC, TipusFitxa::PEO);
     }
 
+   
+    
     posarFitxa(0, 0, ColorFitxa::NEGRE, TipusFitxa::TORRE);
     posarFitxa(0, 7, ColorFitxa::NEGRE, TipusFitxa::TORRE);
     posarFitxa(7, 0, ColorFitxa::BLANC, TipusFitxa::TORRE);
@@ -61,5 +63,19 @@ void inicialitzarTaulell() {
     posarFitxa(0, 1, ColorFitxa::NEGRE, TipusFitxa::CAVALL);
     posarFitxa(0, 6, ColorFitxa::NEGRE, TipusFitxa::CAVALL);
     posarFitxa(7, 1, ColorFitxa::BLANC, TipusFitxa::CAVALL);
+    posarFitxa(7, 6, ColorFitxa::BLANC, TipusFitxa::CAVALL);
 
+
+    posarFitxa(0, 2, ColorFitxa::NEGRE, TipusFitxa::ALFIL);
+    posarFitxa(0, 5, ColorFitxa::NEGRE, TipusFitxa::ALFIL);
+    posarFitxa(7, 2, ColorFitxa::BLANC, TipusFitxa::ALFIL);
+    posarFitxa(7, 5, ColorFitxa::BLANC, TipusFitxa::ALFIL);
+
+
+
+    posarFitxa(7, 4, ColorFitxa::BLANC, TipusFitxa::REI);
+    posarFitxa(7, 3, ColorFitxa::BLANC, TipusFitxa::REINA);
+
+    posarFitxa(0, 4, ColorFitxa::NEGRE, TipusFitxa::REI);
+    posarFitxa(0, 3, ColorFitxa::NEGRE, TipusFitxa::REINA);
 }
