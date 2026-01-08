@@ -12,10 +12,10 @@ struct Fitxa {
     std::string simbol;
 };
 
-/* TAULELL GLOBAL */
+// TAULELL GLOBAL 
 extern Fitxa taulell[TAMANYTAULELL][TAMANYTAULELL];
 
-/* FUNCIONS */
+// FUNCIONS
 void inicialitzarTaulell();
 void imprimirTaulell();
 void posarFitxa(int f, int c, ColorFitxa color, TipusFitxa tipus);
