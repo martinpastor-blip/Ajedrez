@@ -8,6 +8,7 @@ Fitxa taulell[TAMANYTAULELL][TAMANYTAULELL];
 
 //imprimir taulell utilitzant dos bucles for
 void imprimirTaulell() {
+    std::cout <<"Escacs- Pol Mates i Martin Pastor"<<std::endl;
 
     std::cout<<NUMEROSTABLERO; //imprimim la numeració de les files y columnes dels taulers, definits al defines.h.
 
