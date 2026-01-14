@@ -16,6 +16,7 @@ struct Fitxa {
 extern Fitxa taulell[TAMANYTAULELL][TAMANYTAULELL];
 
 // FUNCIONS
-void inicialitzarTaulell();
 void imprimirTaulell();
 void posarFitxa(int f, int c, ColorFitxa color, TipusFitxa tipus);
+void moureFitxa(int filaOrigen, int colOrigen, int filaDesti, int colDesti);
+void inicialitzarTaulell();

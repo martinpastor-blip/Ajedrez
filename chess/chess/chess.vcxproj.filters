@@ -18,30 +18,12 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="moviments.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="regles.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="logica_joc.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="taulell.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="moviments.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="regles.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="logica_joc.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="taulell.h">
+    <ClInclude Include="joc.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="libraries.h">

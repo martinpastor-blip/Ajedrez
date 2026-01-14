@@ -1,6 +1,6 @@
 #include "libraries.h"
 #include "defines.h"
-#include "taulell.h"
+#include "joc.h"
 
 /* DEFINICIÓ DEL TAULELL */
 Fitxa taulell[TAMANYTAULELL][TAMANYTAULELL];
@@ -53,8 +53,7 @@ void inicialitzarTaulell() {
         posarFitxa(6, c, ColorFitxa::BLANC, TipusFitxa::PEO);
     }
 
-   
-    
+
     posarFitxa(0, 0, ColorFitxa::NEGRE, TipusFitxa::TORRE);
     posarFitxa(0, 7, ColorFitxa::NEGRE, TipusFitxa::TORRE);
     posarFitxa(7, 0, ColorFitxa::BLANC, TipusFitxa::TORRE);
@@ -64,18 +63,22 @@ void inicialitzarTaulell() {
     posarFitxa(0, 6, ColorFitxa::NEGRE, TipusFitxa::CAVALL);
     posarFitxa(7, 1, ColorFitxa::BLANC, TipusFitxa::CAVALL);
     posarFitxa(7, 6, ColorFitxa::BLANC, TipusFitxa::CAVALL);
-
-
     posarFitxa(0, 2, ColorFitxa::NEGRE, TipusFitxa::ALFIL);
     posarFitxa(0, 5, ColorFitxa::NEGRE, TipusFitxa::ALFIL);
     posarFitxa(7, 2, ColorFitxa::BLANC, TipusFitxa::ALFIL);
     posarFitxa(7, 5, ColorFitxa::BLANC, TipusFitxa::ALFIL);
-
-
-
     posarFitxa(7, 4, ColorFitxa::BLANC, TipusFitxa::REI);
     posarFitxa(7, 3, ColorFitxa::BLANC, TipusFitxa::REINA);
-
     posarFitxa(0, 4, ColorFitxa::NEGRE, TipusFitxa::REI);
     posarFitxa(0, 3, ColorFitxa::NEGRE, TipusFitxa::REINA);
 }
+
+    void moureFitxa(int filaOrigen, int colOrigen, int filaDesti, int colDesti) {
+        if (filaOrigen >= 0 && filaOrigen < TAMANYTAULELL && colOrigen >= 0 && colOrigen < TAMANYTAULELL &&
+            filaDesti >= 0 && filaDesti < TAMANYTAULELL && colDesti >= 0 && colDesti < TAMANYTAULELL) {
+
+            Fitxa f = taulell[filaOrigen][colOrigen];
+            posarFitxa(filaDesti, colDesti, f.color, f.tipus);
+            posarFitxa(filaOrigen, colOrigen, ColorFitxa::CAP, TipusFitxa::BUIT);
+        }
+    }
