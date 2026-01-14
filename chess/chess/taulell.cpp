@@ -2,12 +2,14 @@
 #include "defines.h"
 #include "joc.h"
 
-/* DEFINICIÓ DEL TAULELL */
+/* DEFINICIÓ DEL TAULELL , "fitxa" es un struct que conté el color, tipus y simbol de la fitxa*/
 Fitxa taulell[TAMANYTAULELL][TAMANYTAULELL];
 
+
+//imprimir taulell utilitzant dos bucles for
 void imprimirTaulell() {
 
-    std::cout<<NUMEROSTABLERO;
+    std::cout<<NUMEROSTABLERO; //imprimim la numeració de les files y columnes dels taulers, definits al defines.h.
 
     for (int f = 0; f < TAMANYTAULELL; f++) {
         std::cout << " " << TAMANYTAULELL - f ;
@@ -17,13 +19,14 @@ void imprimirTaulell() {
     }
 }
 
+/*Funcio per a nombrar a les fitxes dels dos usuaris(fitxes al taulell en anglès com s'ha especificat a la entrega,
+però amb el "nom" en català per entrendre-ho millor al programar) */
 
 void posarFitxa(int f, int c, ColorFitxa color, TipusFitxa tipus) {
     taulell[f][c].color = color;
     taulell[f][c].tipus = tipus;
 
 
-    // (fitxes en anglès, però amb el "nom" en català per entrendre-ho millor)
     if (tipus == TipusFitxa::BUIT) taulell[f][c].simbol = " . ";
     else if (color == ColorFitxa::BLANC) {
         if (tipus == TipusFitxa::PEO) taulell[f][c].simbol = " P ";
@@ -43,6 +46,9 @@ void posarFitxa(int f, int c, ColorFitxa color, TipusFitxa tipus) {
     }
 }
 
+
+//funció per inicialitzar el taulell, usa la funcio de posar fitxes per colocarles a la posicio correponent al taulell.
+
 void inicialitzarTaulell() {
     for (int f = 0; f < TAMANYTAULELL; f++)
         for (int c = 0; c < TAMANYTAULELL; c++)
@@ -53,12 +59,10 @@ void inicialitzarTaulell() {
         posarFitxa(6, c, ColorFitxa::BLANC, TipusFitxa::PEO);
     }
 
-
     posarFitxa(0, 0, ColorFitxa::NEGRE, TipusFitxa::TORRE);
     posarFitxa(0, 7, ColorFitxa::NEGRE, TipusFitxa::TORRE);
     posarFitxa(7, 0, ColorFitxa::BLANC, TipusFitxa::TORRE);
     posarFitxa(7, 7, ColorFitxa::BLANC, TipusFitxa::TORRE);
-
     posarFitxa(0, 1, ColorFitxa::NEGRE, TipusFitxa::CAVALL);
     posarFitxa(0, 6, ColorFitxa::NEGRE, TipusFitxa::CAVALL);
     posarFitxa(7, 1, ColorFitxa::BLANC, TipusFitxa::CAVALL);
@@ -73,6 +77,8 @@ void inicialitzarTaulell() {
     posarFitxa(0, 3, ColorFitxa::NEGRE, TipusFitxa::REINA);
 }
 
+/*funcio per al moviment de les fitxes, assegura que les coordenades que has passat(tant d’origen com de destí)
+existeixin dins del tauler abans d’intentar moure res.*/
     void moureFitxa(int filaOrigen, int colOrigen, int filaDesti, int colDesti) {
         if (filaOrigen >= 0 && filaOrigen < TAMANYTAULELL && colOrigen >= 0 && colOrigen < TAMANYTAULELL &&
             filaDesti >= 0 && filaDesti < TAMANYTAULELL && colDesti >= 0 && colDesti < TAMANYTAULELL) {

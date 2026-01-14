@@ -1,4 +1,4 @@
 #pragma once
+
+//llibreries necessaries 
 #include <iostream>
-#include <vector>
-#include <string>
